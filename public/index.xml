@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>🪴 Quartz 4.0</title>
+      <link>https://quartz.jzhao.xyz</link>
+      <description>Last 10 notes on 🪴 Quartz 4.0</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Architecture</title>
+    <link>https://quartz.jzhao.xyz/advanced/architecture</link>
+    <guid>https://quartz.jzhao.xyz/advanced/architecture</guid>
+    <description>Quartz is a static site generator. How does it work? This question is best answered by tracing what happens when a user (you!) runs npx quartz build in the command line: On the server § After running npx quartz build, npm will look at package.</description>
+    <pubDate>Sat, 13 Jan 2024 22:47:39 GMT</pubDate>
+  </item><item>
+    <title>Creating your own Quartz components</title>
+    <link>https://quartz.jzhao.xyz/advanced/creating-components</link>
+    <guid>https://quartz.jzhao.xyz/advanced/creating-components</guid>
+    <description> Warning This guide assumes you have experience writing JavaScript and are familiar with TypeScript. Normally on the web, we write layout code using HTML which looks something like the following: &lt;article&gt; &lt;h1&gt;An article header&lt;/h1&gt; &lt;p&gt;Some content&lt;/p&gt; &lt;/article&gt; This piece of HTML represents an article with a leading header that says “An article header” and a paragraph that contains the text “Some content”.</description>
+    <pubDate>Sat, 13 Jan 2024 22:47:39 GMT</pubDate>
+  </item><item>
+    <title>Advanced</title>
+    <link>https://quartz.jzhao.xyz/advanced/</link>
+    <guid>https://quartz.jzhao.xyz/advanced/</guid>
+    <description></description>
+    <pubDate>Sat, 13 Jan 2024 22:47:39 GMT</pubDate>
+  </item><item>
+    <title>Making your own plugins</title>
+    <link>https://quartz.jzhao.xyz/advanced/making-plugins</link>
+    <guid>https://quartz.jzhao.xyz/advanced/making-plugins</guid>
+    <description> Warning This part of the documentation will assume you have working knowledge in TypeScript and will include code snippets that describe the interface of what Quartz plugins should look like.</description>
+    <pubDate>Sat, 13 Jan 2024 22:47:39 GMT</pubDate>
+  </item><item>
+    <title>Paths in Quartz</title>
+    <link>https://quartz.jzhao.xyz/advanced/paths</link>
+    <guid>https://quartz.jzhao.xyz/advanced/paths</guid>
+    <description>Paths are pretty complex to reason about because, especially for a static site generator, they can come from so many places. A full file path to a piece of content? Also a path.</description>
+    <pubDate>Sat, 13 Jan 2024 22:47:39 GMT</pubDate>
+  </item><item>
+    <title>Authoring Content</title>
+    <link>https://quartz.jzhao.xyz/authoring-content</link>
+    <guid>https://quartz.jzhao.xyz/authoring-content</guid>
+    <description>All of the content in your Quartz should go in the /content folder. The content for the home page of your Quartz lives in content/index.md. If you’ve setup Quartz already, this folder should already be initialized.</description>
+    <pubDate>Sat, 13 Jan 2024 22:47:39 GMT</pubDate>
+  </item><item>
+    <title>Building your Quartz</title>
+    <link>https://quartz.jzhao.xyz/build</link>
+    <guid>https://quartz.jzhao.xyz/build</guid>
+    <description>Once you’ve initialized Quartz, let’s see what it looks like locally: npx quartz build --serve This will start a local web server to run your Quartz on your computer.</description>
+    <pubDate>Sat, 13 Jan 2024 22:47:39 GMT</pubDate>
+  </item><item>
+    <title>Configuration</title>
+    <link>https://quartz.jzhao.xyz/configuration</link>
+    <guid>https://quartz.jzhao.xyz/configuration</guid>
+    <description>Quartz is meant to be extremely configurable, even if you don’t know any coding. Most of the configuration you should need can be done by just editing quartz.</description>
+    <pubDate>Sat, 13 Jan 2024 22:47:39 GMT</pubDate>
+  </item><item>
+    <title>Docker Support</title>
+    <link>https://quartz.jzhao.xyz/features/Docker-Support</link>
+    <guid>https://quartz.jzhao.xyz/features/Docker-Support</guid>
+    <description>Quartz comes shipped with a Docker image that will allow you to preview your Quartz locally without installing Node. You can run the below one-liner to run Quartz in Docker.</description>
+    <pubDate>Sat, 13 Jan 2024 22:47:39 GMT</pubDate>
+  </item><item>
+    <title>Latex</title>
+    <link>https://quartz.jzhao.xyz/features/Latex</link>
+    <guid>https://quartz.jzhao.xyz/features/Latex</guid>
+    <description>Quartz uses Katex by default to typeset both inline and block math expressions at build time. Syntax § Block Math § Block math can be rendered by delimiting math expression with $$.</description>
+    <pubDate>Sat, 13 Jan 2024 22:47:39 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>
