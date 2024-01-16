@@ -47,3 +47,9 @@ export const defaultListPageLayout: PageLayout = {
   ],
   right: [],
 }
+
+Component.Explorer({
+  mapFn: (node) => {
+    node.displayName = node.displayName.toUpperCase()
+  },
+})
