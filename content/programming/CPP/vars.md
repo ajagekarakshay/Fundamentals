@@ -1,5 +1,5 @@
 ---
-title: Cplusplus
+title: Variables and Functions
 ---
 ## Data types
 

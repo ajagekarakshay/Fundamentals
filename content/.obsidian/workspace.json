@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "programming/CPP/index.md",
+                "file": "math/series.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "programming/CPP/index.md",
+                "file": "math/series.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "programming/CPP/index.md",
+                "file": "math/series.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": false
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "programming/CPP/index.md"
+                "file": "math/series.md"
               }
             }
           }
@@ -149,15 +149,22 @@
   },
   "active": "1868a2e1adfab0e0",
   "lastOpenFiles": [
+    "math/distrib.md",
+    "math/series.md",
+    "math/calc/index.md",
+    "math/calc/codes.md",
+    "math/index.md",
+    "math/calc",
+    "index.md",
+    "math",
+    "programming/CPP/index.md",
+    "programming/index.md",
+    "programming/CPP/vars.md",
     "programming/cpp_variables.md",
     "programming/test.md",
-    "programming/CPP/vars.md",
-    "programming/CPP/index.md",
     "programming/CPP",
-    "programming/index.md",
     "programming",
     "advanced/index.md",
-    "index.md",
     "advanced/making plugins.md",
     "advanced/architecture.md",
     "advanced/creating components.md",
@@ -172,10 +179,6 @@
     "programming/cpp/working.md",
     "programming/cpp/variables.md",
     "migrating from Quartz 3.md",
-    "features/index.md",
-    "features/backlinks.md",
-    "build.md",
-    "authoring content.md",
     "Untitled.canvas",
     "programming/cpp/Untitled",
     "programming/cpp"

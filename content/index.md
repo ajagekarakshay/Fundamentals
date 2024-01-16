@@ -6,5 +6,5 @@ title: Fundamentals
 
 | Topic | Sub-topics |
 | ---- | ---- |
-| Programming | --[C++](programming/cpp/index) |
-|  |  |
+| Programming | [C++](programming/CPP)<br> |
+| Math | Stochastic Calculus |
