@@ -21,7 +21,7 @@
     <title>Distributions</title>
     <link>https://basics.akshayajagekar.com/math/distrib</link>
     <guid>https://basics.akshayajagekar.com/math/distrib</guid>
-    <description>Discrete distributions § A “ Degenerate §.</description>
+    <description>Discrete distributions § A random variable X is discrete if ∑x∈R​P(X=x)=1. 1. Degenerate § 2. Bernoulli § 3. Binomial § 4. Geometric § 5. Negative-Binomial § 6.</description>
     <pubDate>Tue, 16 Jan 2024 02:02:29 GMT</pubDate>
   </item><item>
     <title>Stochastic Calculus</title>
