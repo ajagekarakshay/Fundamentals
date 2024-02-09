@@ -4,20 +4,24 @@ todo: Fourier series, Taylor series
 ---
 ## Finite series
 ### 1. Powers
-$$
+
+\\[
 \sum_{x=1}^{n}x=\frac{n(n+1)}{2}
-y=mx+c
-$$
-$$
+\\]
+\\[
 \sum_{x=1}^{n}x^2=\frac{n(n+1)(2n+1)}{6}
-$$
+\\]
+
 $$
 \sum_{x=1}^{n}x^3=\frac{n^2(n+1)^2}{2^2}
 $$
+
 ### 2. Binomial coefficients
+
 $$
 \sum_{k=0}^{n}{}^nC_k=2^n
 $$
+
 $$
 \sum_{k=0}^{n}{^{}{}^nC_k}^2={}^{2n}C_n
 $$
