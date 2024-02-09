@@ -14,6 +14,7 @@ todo: Fourier series, Taylor series
 \\[
 \sum_{x=1}^{n}x^3=\frac{n^2(n+1)^2}{2^2}
 \\]
+
 ### 2. Binomial coefficients
 
 \\[
