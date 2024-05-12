@@ -1,0 +1,30 @@
+[book]
+authors = ["Akshay Ajagekar"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Fundamentals"
+
+[preprocessor.blocks]
+command = "node node_modules/blocks-preprocessor/dist/blocks.js"
+
+[preprocessor.katex]
+after = ["links"]
+
+[preprocessor.admonish]
+command = "mdbook-admonish"
+assets_version = "3.0.2" # do not edit: managed by `mdbook-admonish install`
+
+[output.html]
+additional-css = [
+        "theme/pagetoc.css", 
+       # "node_modules/blocks-preprocessor/dist/mdbook-blocks/resources/bootstrap/scss/bootstrap.css", 
+       # "node_modules/blocks-preprocessor/dist/mdbook-blocks/resources/blocks/scss/blocks.css", 
+        "./mdbook-admonish.css", 
+        #"theme/mdbook-admonish.css", 
+        ]
+
+additional-js = [
+      # "node_modules/blocks-preprocessor/dist/mdbook-blocks/resources/bootstrap/js/bootstrap.js",
+        "theme/pagetoc.js",
+               ]

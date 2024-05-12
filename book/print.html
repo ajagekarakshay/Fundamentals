@@ -1,0 +1,362 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Fundamentals</title>
+        <meta name="robots" content="noindex">
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="theme/pagetoc.css">
+        <link rel="stylesheet" href="./mdbook-admonish.css">
+
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('light')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="index.html"><strong aria-hidden="true">1.</strong> Content</a></li><li class="chapter-item expanded affix "><li class="part-title">Data Structures & Algorithms</li><li class="chapter-item expanded "><a href="dsa/array.html"><strong aria-hidden="true">2.</strong> Array</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Fundamentals</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <div class="content-wrap">
+                            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<p><a href="dsa/array.html">Array</a></p>
+<div class="row col-3 my-4"><div class="card h-100"><img src="./assets/blocks-watermark.png" class="card-img-top" alt="..."><div class="card-body d-flex flex-column flex-grow-1"><p class="card-title">Data Structure & Algorithms</p><p class="card-text mb-5"></p><a href="./SUMMARY.html" data-href="./SUMMARY.md" class="btn-wrap mt-auto align-self-start"><button class="btn btn-primary">Learn More</button></a></div></div></div><div style="break-before: page; page-break-before: always;"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css">
+<hr>
+<h2 id="array"><a class="header" href="#array">Array</a></h2>
+<p>An array is a linear data structure that stores elements of the same type in a <strong>contiguous block of memory</strong>. It is also known as a static array or a one-dimensional array. Here is a more detailed description of the array data structure:</p>
+<ul>
+<li>Elements of an array are of the same data type.</li>
+<li>Arrays are indexed, meaning each element in the array has a unique index that allows access to its value.</li>
+<li>The first element in an array is typically assigned index 0 and the last element is assigned the last index.</li>
+<li>Static arrays have a fixed size, which means once created, you cannot change its size.</li>
+<li>Arrays support basic operations such as accessing elements, modifying elements, and iterating over all elements.</li>
+</ul>
+<p>Overall, arrays provide a simple and efficient way to work with collections of data.</p>
+<h2 id="1-python"><a class="header" href="#1-python">1. Python</a></h2>
+<pre><code class="language-py">arr = [0, 1, 2, 3]
+arr[2] = &quot;item&quot;
+#[0, 1, &quot;item&quot;, 3]
+size = len(arr)
+</code></pre>
+<p>Python lists are implemented as dynamic arrays under the hood. Initially, when you create a list with a few elements, Python allocates memory for a small array to hold those elements. As elements are added to the list and it reaches capacity, a growth strategy to resize the array often doubling the size of the array each time it needs to be resized. When the array needs to be resized, existing elements are copied to the newly created larger array in linear time.</p>
+<p>&lt;div id=&quot;admonition-how-can-python-lists-store-items-of-different-types&quot; class=&quot;admonition admonish-question&quot;&gt;
+&lt;div class=&quot;admonition-title&quot;&gt;</p>
+<p>How can Python lists store items of different types?</p>
+<p>&lt;a class=&quot;admonition-anchor-link&quot; href=&quot;#admonition-how-can-python-lists-store-items-of-different-types&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div&gt;</p>
+<p>Python lists can store different item types because they are implemented using pointers to Python objects. Each element in a Python list is essentially a reference to a Python object, rather than the actual object itself. This allows lists to store objects of different types meaning the memory footprint of the list itself remains relatively small.</p>
+<p>&lt;/div&gt;
+&lt;/div&gt;</p>
+<h3 id="11-python-lists"><a class="header" href="#11-python-lists">1.1. Python lists</a></h3>
+<ul>
+<li><code>append(4)</code>: Adds an item to the end of the list.</li>
+<li><code>extend([3,4,5])</code>: Add multiple items to the end of the list.</li>
+<li><code>insert(index, item)</code>: Insert an item at a specific index.</li>
+<li><code>remove(item)</code>: Remove the first occurrence of an item from the list.</li>
+<li><code>pop()</code>: Remove and return the last item in the list.</li>
+<li><code>pop(index)</code>: Remove and return an item at a specific index.</li>
+<li><code>reverse()</code>: Reverse the order of the list in-place.</li>
+<li><code>index(item)</code>: Return the index of the first occurrence of an item in the list.</li>
+<li>Traverse<pre><code class="language-py">for i in range(len(arr)): 
+    print(arr[i]) 
+</code></pre>
+</li>
+</ul>
+<h2 id="2-c"><a class="header" href="#2-c">2. C++</a></h2>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+int main(void) {
+    int size = 4;
+    int arr[size];
+    arr[2] = 3;
+    int nums[3] = {10, 20, 30};
+    int size = sizeof(nums) / sizeof(nums[0]);
+    return 0;
+}
+</code></pre>
+<p>C++ arrays are static arrays. All the above-mentioned properties hold for these.</p>
+<p>&lt;div id=&quot;admonition-note&quot; class=&quot;admonition admonish-note&quot;&gt;
+&lt;div class=&quot;admonition-title&quot;&gt;</p>
+<p>Note</p>
+<p>&lt;a class=&quot;admonition-anchor-link&quot; href=&quot;#admonition-note&quot;&gt;&lt;/a&gt;
+&lt;/div&gt;
+&lt;div&gt;</p>
+<p>In C++, vectors <code>std::vector</code> are dynamic arrays that are part of the Standard Template Library (STL).</p>
+<p>&lt;/div&gt;
+&lt;/div&gt;</p>
+<pre><code class="language-cpp">#include &lt;vector&gt; # dont forget to add this (safer)
+std::vector&lt;int&gt; nums = {10, 20, 30};
+std::vector&lt;int&gt; arr;
+arr.push_back(10);
+arr.push_back(20);
+</code></pre>
+<h3 id="21-c-vectors"><a class="header" href="#21-c-vectors">2.1. C++ vectors</a></h3>
+<ul>
+<li><code>push_back(item)</code>: Add an item to the end of the vector.</li>
+<li><code>pop_back()</code>: Remove and return the last item in the vector.</li>
+<li><code>insert(index, item)</code>: Insert an item at a specific index.</li>
+<li><code>erase(index)</code>: Remove an item at a specific index.</li>
+<li><code>clear()</code>: Remove all items from the vector.</li>
+<li><code>size()</code>: Return the number of items in the vector.</li>
+<li><code>empty()</code>: Return <code>true</code> if the vector is empty, <code>false</code> otherwise.</li>
+<li><code>reserve(size)</code>: Reserves capacity for at least <code>size</code> items in the vector.</li>
+<li><code>shrink_to_fit()</code>: Reduces the capacity of the vector to fit its size.</li>
+<li>Traverse</li>
+</ul>
+<pre><code class="language-cpp">for (int i = 0; i &lt; nums.size(); i++) {
+    cout &lt;&lt; nums[i] &lt;&lt; endl;
+}
+</code></pre>
+<h2 id="3-time-complexity"><a class="header" href="#3-time-complexity">3. Time Complexity</a></h2>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Static</th>
+<th>Dynamic</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Access</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>Remove/Insert</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span> (Amortized)</td>
+</tr>
+<tr>
+<td>Traverse</td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></td>
+<td><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathnormal">n</span><span class="mclose">)</span></span></span></span> memory requirements.</p>
+
+                        </div>
+                        <div class="sidetoc">
+                            <nav class="pagetoc"></nav>
+                        </div>
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+        <script src="theme/pagetoc.js"></script>
+
+        <script>
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+
+    </div>
+    </body>
+</html>
