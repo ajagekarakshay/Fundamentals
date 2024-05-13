@@ -66,6 +66,8 @@ markdown_extensions:
 
   - pymdownx.tabbed:
       alternate_style: true
+  - attr_list
+  - md_in_html
 
 # extra_javascript:
 #   - javascripts/mathjax.js
@@ -82,15 +84,17 @@ extra_css:
 
 # page tree
 nav:
-  - Home: index.md
+  - Home: 
+    - Navigation: index.md
+    - Template: template.md
   - Math:
     - Series: math/series.md
     - Distributions: math/distrib.md
-  - Programming: 
-    - CPP: 
-      - Variables: programming/CPP/vars.md
-    - Taichi
   - Data Structures & Algorithms:
     - Array: dsa/array.md
     - Stack and Queue: dsa/stacknqueue.md
     - Linked List: dsa/linked.md
+  - Programming: 
+    - CPP: 
+      - Variables: programming/CPP/vars.md
+    - Taichi

@@ -1,15 +1,23 @@
----
-title: Fundamentals
----
+<div class="grid cards" markdown>
 
-## Table of contents
+-   [__Math__](math/index.md)
 
-| Topic | Sub-topics |
-| ---- | ---- |
-| Programming | [C++](programming/CPP)<br> |
-| Math | Stochastic Calculus |
+    ---
+    * [Probability](math/prob/index.md)
+    * [Stochastic Calculus](math/calc/index.md)
+    
 
-!!! info
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
-    nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
-    massa, nec semper lorem quam in massa.
+-   [__Data Structures & Algos__](dsa/index.md)
+
+    ---
+    * [Basic data stuctures](dsa/index.md)
+    * [Essential algorithms](dsa/index.md)
+    
+
+-    [__Programming__](programming/index.md)
+
+    ---
+    * [C++](dsa/cpp/index.md)
+    * [Taichi](dsa/ti/index.md)
+
+</div>
