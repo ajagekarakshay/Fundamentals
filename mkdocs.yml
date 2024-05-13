@@ -1,7 +1,18 @@
 site_name: Fundamentals
+site_url: https://basics.akshayajagekar.com/
+site_author: Akshay Ajagekar
+
+# Copyright
+copyright: Copyright &copy; Akshay Ajagekar
 
 theme:
   name: material
+  features:
+    - content.code.copy
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - search.suggest
+    - search.highlight
   palette:
     # Palette toggle for automatic mode
     - media: "(prefers-color-scheme)"
@@ -11,7 +22,9 @@ theme:
 
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
-      scheme: default 
+      scheme: default
+      primary: indigo
+      accent: indigo
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -19,9 +32,13 @@ theme:
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: black
+      accent: indigo
       toggle:
         icon: material/brightness-4
         name: Switch to system preference
+
+    
 
 plugins:
   - search
@@ -34,14 +51,21 @@ markdown_extensions:
 
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+
 
   - pymdownx.arithmatex:
       generic: true
 
   - admonition
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - pymdownx.tabbed:
+      alternate_style: true
 
 # extra_javascript:
 #   - javascripts/mathjax.js
@@ -55,3 +79,18 @@ extra_javascript:
 
 extra_css:
   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css
+
+# page tree
+nav:
+  - Home: index.md
+  - Math:
+    - Series: math/series.md
+    - Distributions: math/distrib.md
+  - Programming: 
+    - CPP: 
+      - Variables: programming/CPP/vars.md
+    - Taichi
+  - Data Structures & Algorithms:
+    - Array: dsa/array.md
+    - Stack and Queue: dsa/stacknqueue.md
+    - Linked List: dsa/linked.md
