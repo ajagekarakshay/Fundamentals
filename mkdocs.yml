@@ -84,17 +84,32 @@ extra_css:
 
 # page tree
 nav:
-  - Home: 
+  - Home:
     - Navigation: index.md
     - Template: template.md
-  - Math:
-    - Series: math/series.md
-    - Distributions: math/distrib.md
-  - Data Structures & Algorithms:
-    - Array: dsa/array.md
-    - Stack and Queue: dsa/stacknqueue.md
-    - Linked List: dsa/linked.md
-  - Programming: 
-    - CPP: 
-      - Variables: programming/CPP/vars.md
-    - Taichi
+  
+  # 1. basics
+  - Fundamentals:
+    - Math:
+      - Series: basics/math/series.md
+      - Distributions: basics/math/distrib.md
+    - Data Structures & Algorithms:
+      - Array: basics/dsa/array.md
+      - Stack and Queue: basics/dsa/stacknqueue.md
+      - Linked List: basics/dsa/linked.md
+    - Programming: 
+      - CPP: 
+        - Variables: basics/programming/CPP/vars.md
+      - Taichi:
+
+  # 2. deep learning
+  - Deep Learning:
+
+  # 3. Finance
+  - Finance:
+
+  # 4. Neuroscience
+  - Neuroscience:
+
+  # 5. Astrophysics
+  - Astrophysics:
