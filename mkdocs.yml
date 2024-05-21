@@ -1,4 +1,4 @@
-site_name: Fundamentals
+site_name: Akshay's Digital Garden
 site_url: https://basics.akshayajagekar.com/
 site_author: Akshay Ajagekar
 
@@ -85,31 +85,30 @@ extra_css:
 # page tree
 nav:
   - Home:
-    - Navigation: index.md
+    - Navigation: navigation.md
     - Template: template.md
   
   # 1. basics
   - Fundamentals:
     - Math:
-      - Series: basics/math/series.md
-      - Distributions: basics/math/distrib.md
+      - Series: basics/math/calc/series.md
+      - Distributions: basics/math/prob/distrib.md
     - Data Structures & Algorithms:
       - Array: basics/dsa/array.md
       - Stack and Queue: basics/dsa/stacknqueue.md
       - Linked List: basics/dsa/linked.md
-    - Programming: 
-      - CPP: 
-        - Variables: basics/programming/CPP/vars.md
-      - Taichi:
+    - C++:
+      - Variables: basics/programming/CPP/vars.md
 
   # 2. deep learning
   - Deep Learning:
+    - Tokenization: deep/tokenization.md
 
-  # 3. Finance
-  - Finance:
+  # # 3. Finance
+  # - Finance:
 
-  # 4. Neuroscience
-  - Neuroscience:
+  # # 4. Neuroscience
+  # - Neuroscience:
 
-  # 5. Astrophysics
-  - Astrophysics:
+  # # 5. Astrophysics
+  # - Astrophysics:

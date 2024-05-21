@@ -133,4 +133,48 @@ graph LR;
     }
     ```
 !!! Question "How to traverse LL and reach the __last node__?"
-    
+    === "Python"
+        ```py
+        curr = head
+        while curr:
+            curr = curr.next
+        print(curr.data) # prints last val
+        ```
+
+    === "C++"
+        ```cpp
+        Node* curr = head;
+        while(curr != nullptr){
+            curr = curr->next;
+        }
+        std::cout << curr->data << std::endl; 
+        ```
+
+!!! Question "How to traverse LL and reach the __second-last node__?"
+    === "Python"
+        ```py
+        curr = head
+        while curr and curr.next:
+            curr = curr.next
+        print(curr.data) # prints second-last val
+        ```
+
+    === "C++"
+        ```cpp
+        Node* curr = head;
+        while((curr!=nullptr) && (curr->next!=nullptr)){
+            curr = curr->next;
+        }
+        std::cout << curr->data << std::endl; 
+        ```
+
+## Time complexity
+
+| Operation     | Static |
+| ------------- | ------ | 
+| Insert at end       | $O(1)$ |
+| Insert in-between | $O(n)$ |
+| Remove random| $O(n)$ | 
+| Traverse      | $O(n)$ | 
+
+$O(n)$ memory requirements.
